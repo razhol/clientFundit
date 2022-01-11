@@ -1,0 +1,114 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f5f9fc;
+  padding-top: 100px;
+  padding: 50px; }
+  body main {
+    max-width: 1000px;
+    margin: 0 auto; }
+
+  body h1 {
+    font-weight: 300; }
+  body .results {
+    color: #7a92a5;
+    font-size: 12px;
+    margin: 12px 5px; }
+    .matchScore{
+      margin-left: 60vw;
+      border-radius: 50vw;
+      padding-left: 1vw;
+      padding-right: 1vw;
+      border-style:solid;
+      position: absolute;
+      max-height: 70px;
+      min-height: 70px;
+      max-width: 40px;
+      min-width: 40px;
+    }
+    .previous {
+      background-color: #f1f1f1;
+      color: black;
+    }
+
+    body a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+    }
+    
+    .next {
+      background-color: #04AA6D;
+      color: white;
+    }
+    .score{
+      font-size: 16px;
+      text-align: center;
+    }
+  body header {
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px 1px #e1e5e8;
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    position: relative; }
+    body header input {
+      width: 100%;
+      text-overflow: ellipsis;
+      display: inline-block;
+      color: #20455e;
+      font-size: 14px;
+      outline: 0;
+      transition: border 0.1s ease;
+      resize: none;
+      border: 1px solid #b6c1cd;
+      border: none; }
+      body header input::placeholder {
+        color: #b6c1cd; }
+  body a {
+    color: #3899ec;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 12px; }
+  body .matches {
+    margin: 0;
+    padding: 0; }
+    body .matches .match {
+      width: 100%;
+      flex-shrink: 0;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 2px 6px 1px #e1e5e8;
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #fff;
+      padding: 10px 20px;
+      transition: box-shadow 0.2s ease-in-out;
+      position: relative; }
+      body .matches .match:hover {
+        box-shadow: 0 2px 6px 1px #d3d7da; }
+      body .matches .match .title {
+        margin: 15px 0;
+        font-size: 16px;
+        font-weight: 800;
+        font-style: normal;
+        color: #20455e; }
+      body .matches .match .userDate {
+          margin: 5px 0;
+          font-size: 14px;
+          font-weight: 400;
+          font-style: normal;
+          color: #20455e; }
+      body .matches .match footer {
+        display: flex;
+        justify-content: space-between; }
+        body .matches .match footer .meta-data {
+          color: #7a92a5;
+          font-size: 12px;
+          margin: 10px 0;
+          flex-shrink: 0; }

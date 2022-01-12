@@ -1,17 +1,14 @@
 import React from "react";
 import { Match } from "./api";
+import "./App.css";
 export const Matches = ({
   matches,
   search,
-  countApproved,
-  countDecline,
   callback,
   addScore,
 }: {
   matches: Match[];
   search: string;
-  countApproved: Number;
-  countDecline: Number;
   callback: (id: String, arg: Number) => void;
   addScore: (id: String, Score: Number) => void;
 }) => {
@@ -24,12 +21,11 @@ export const Matches = ({
 
   );
   const [addScoreCredit, setAddScoreCredit] = React.useState<Number>(0);
-
-  const matchScore = (score: Number) => {
+  const setMatchScoreType = (score: Number) => {
     if (score >= 679) {
       return { type: "A", color: "green" }
     }
-    else if (579 >= score && score < 679) {
+    else if (579 <= score && score < 679) {
       return { type: "B", color: "yellow" }
     }
     else {
@@ -43,8 +39,8 @@ export const Matches = ({
       {filteredMatches.map((match) => (
         <li key={match.id} className="match">
           <h5 className="title">{match.companyName}</h5>
-          <div className="matchScore" style={{ borderColor: matchScore(match.borrower.creditScore).color }}>
-            <h5 className="score" style={{ color: matchScore(match.borrower.creditScore).color }}>{matchScore(match.borrower.creditScore).type}</h5>
+          <div className="matchScore" style={{ borderColor: setMatchScoreType(match.borrower.creditScore).color }}>
+            <h5 className="score" style={{ color: setMatchScoreType(match.borrower.creditScore).color }}>{setMatchScoreType(match.borrower.creditScore).type}</h5>
           </div>
           <div className="matchData">
             <div>
@@ -63,10 +59,10 @@ export const Matches = ({
                 {match.borrower.financeData.currency}
               </p>
             </div>
-            <input onChange={e => setAddScoreCredit(+e.target.value)} type="text" ></input> <br />
-            <button onClick={() => addScore(match.id, addScoreCredit)}>add</button> <br />
-            <button onClick={() => callback(match.id, + 1)}>Approved</button>
-            <button onClick={() => callback(match.id, - 1)}>declired</button>
+            <input onChange={e => setAddScoreCredit(+e.target.value)} type="text" ></input> 
+            <a className="ButtonRight" onClick={() => addScore(match.id, addScoreCredit)}>add</a> <br />
+            <a className="ButtonLeft" onClick={() => callback(match.id, + 1)}>Approved</a>
+            <a className="ButtonRight" onClick={() => callback(match.id, - 1)}>declired</a>
           </div>
           <footer>
             <div className="meta-data">
